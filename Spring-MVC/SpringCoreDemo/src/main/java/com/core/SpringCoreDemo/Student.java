@@ -41,6 +41,10 @@ public class Student {
 	public String toString() {
 		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", address=" + address + "]";
 	}
+
+	public Student() {
+		super();
+	}
 	
 	
 
