@@ -18,14 +18,16 @@ public class Student {
 	}
 
 	public void setStudentId(Integer studentId) {
+		System.out.println("setting student id");
 		this.studentId = studentId;
-	} 
+	}
 
 	public String getStudentName() {
 		return studentName;
 	}
 
 	public void setStudentName(String studentName) {
+		System.out.println("setting student name");
 		this.studentName = studentName;
 	}
 
@@ -34,6 +36,7 @@ public class Student {
 	}
 
 	public void setAddress(String address) {
+		System.out.println("setting student address");
 		this.address = address;
 	}
 
@@ -45,7 +48,5 @@ public class Student {
 	public Student() {
 		super();
 	}
-	
-	
 
 }
