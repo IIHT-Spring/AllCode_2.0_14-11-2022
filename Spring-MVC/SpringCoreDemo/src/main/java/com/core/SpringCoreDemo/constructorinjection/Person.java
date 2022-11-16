@@ -1,7 +1,5 @@
 package com.core.SpringCoreDemo.constructorinjection;
 
-
-
 public class Person {
 	private String name;
 	private int personId;
@@ -13,10 +11,10 @@ public class Person {
 		this.certi = certi;
 	}
 
-	@Override 
+	@Override
 	public String toString() {
-		return  this.name + " : " + this.personId + "{ " + this.certi.name + " }" ;
+		return this.name + " : " + this.personId + "{ " + 
+	this.certi.name + " }";
 	}
 
-	
 }
