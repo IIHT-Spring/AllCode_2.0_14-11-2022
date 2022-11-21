@@ -16,5 +16,9 @@ public interface IStudentService {
 	Optional<Student> getStudent(Integer id);
 	
 	public List<Student> getAllStudents();
+	
+	public void  deleteStudent(Integer id);
+	
+	Student updateStudent(Student student, Integer id);
 ;
 }
