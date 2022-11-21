@@ -21,8 +21,7 @@ public class JWTUtility implements Serializable {
 
 	public static final long JWT_TOKEN_VALIDITY = 5 * 30 * 30;
 
-	@Value("${jwt.secret}")
-	private String secretKey;
+	private String secretKey = "nishant123";
 
 	// retrive the user name from jwt token
 	public String getUsernameFromToken(String token) {
