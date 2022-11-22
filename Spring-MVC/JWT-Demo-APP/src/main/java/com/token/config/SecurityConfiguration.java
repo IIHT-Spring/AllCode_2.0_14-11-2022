@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.token.filter.JwtFilter;
 import com.token.service.UserService;
 
 @SuppressWarnings("deprecation")
@@ -22,8 +23,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserService userService;
 	
-//	@Autowired
-//	private JwtFilter jwtFilter();
+	@Autowired
+	private JwtFilter jwtFilter;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -44,11 +45,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("/auth")
 		.permitAll()
 		.anyRequest()
-		.authenticated();
-//		.and()
-//		.sessionManagement()
-//		.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//	http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+		.authenticated()
+		.and()
+		.sessionManagement()
+		.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+	http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 
 }
